@@ -1,0 +1,23 @@
+name = "civil-chain"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fileverse-db"
+database_id = "238066f2-f03b-435e-adc1-bf4ac5f1ff22"
+migrations_dir = "migrations"
+
+[triggers]
+crons = ["*/2 * * * *", "*/1 * * * *"]
+
+[[rules]]
+type = "Text"
+globs = ["**/*.txt", "**/*.md"]
+
+[vars]
+NODE_ENV = "production"
+
+[observability]
+enabled = true
